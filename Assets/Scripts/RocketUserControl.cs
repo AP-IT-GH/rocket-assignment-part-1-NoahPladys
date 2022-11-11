@@ -31,6 +31,7 @@ public class RocketUserControl : MonoBehaviour
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 0, -rotationSpeed) * Time.deltaTime);
             rocket.MoveRotation(rocket.rotation * deltaRotation);
+            rocket.angularVelocity = Vector3.zero;
         }
 
         //Rotate right when d or right key is held down
@@ -38,6 +39,7 @@ public class RocketUserControl : MonoBehaviour
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 0, rotationSpeed) * Time.deltaTime);
             rocket.MoveRotation(rocket.rotation * deltaRotation);
+            rocket.angularVelocity = Vector3.zero;
         }
        
     }

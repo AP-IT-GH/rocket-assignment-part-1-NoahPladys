@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
+    private bool won;
+    public Canvas nextLevelScreen;
+
+    private void Start()
+    {
+        won = false;
+        nextLevelScreen.enabled = false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        print("Gewonnen!");
+        if (!won)
+        {
+            won = false;
+            if(nextLevelScreen != null) nextLevelScreen.enabled = true;
+        }
     }
 }
